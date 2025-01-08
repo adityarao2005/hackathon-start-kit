@@ -3,7 +3,7 @@ services:
   nextjs-frontend:
     build:
       context: ./nextjs-frontend-example
-      dockerfile: frontend.dev.dockerfile
+      dockerfile: ../dockerfiles/frontend.dev.dockerfile
 
     # Set environment variables directly in the compose file
     environment:
