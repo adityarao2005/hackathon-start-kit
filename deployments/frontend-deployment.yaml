@@ -26,6 +26,6 @@ spec:
         app: frontend
     spec:
       containers:
-      # edit it to be the docker hub or other registry image name
+      # TODO: edit it to be the docker hub or other registry image name
       - name: frontend
         image: frontend:latest 
