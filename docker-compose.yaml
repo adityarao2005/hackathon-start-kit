@@ -25,9 +25,9 @@ services:
   fastapi-backend:
     build:
       context: ./fastapi-backend-example
-      dockerfile: ../dockerfiles/backend.dev.dockerfile
+      dockerfile: ../dockerfiles/fastapi.dev.dockerfile
     volumes:
-      - ./fastapi-backend-example/app:/app/app
+      - ./fastapi-backend-example:/app
     ports:
       - 8000:8000
 
@@ -35,18 +35,18 @@ services:
   flask-backend:
     build:
       context: ./flask-backend-example
-      dockerfile: ../dockerfiles/backend.dev.dockerfile
+      dockerfile: ../dockerfiles/flask.dev.dockerfile
     volumes:
-      - ./flask-backend-example/app:/app/app
+      - ./flask-backend-example:/app
     ports:
       - 5000:5000
 
   # nodejs backend
-  nodejs-backend:
-    build:
-      context: ./nodejs-backend-example
-      dockerfile: ../dockerfiles/backend.dev.dockerfile
-    volumes:
-      - ./nodejs-backend-example/app:/app/app
-    ports:
-      - 4000:3000
+  # nodejs-backend:
+  #   build:
+  #     context: ./nodejs-backend-example
+  #     dockerfile: ../dockerfiles/node.dev.dockerfile
+  #   volumes:
+  #     - ./nodejs-backend-example/app:/app/app
+  #   ports:
+  #     - 4000:3000
