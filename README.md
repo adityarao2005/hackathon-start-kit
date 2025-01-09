@@ -11,3 +11,27 @@ As I said above, clone this repository and modify it a bit and use it to jump st
 ## What this is not?
 
 A submission for a hackathon. This is pretty generic so you won't get any points from the judges.
+
+## How to use this?
+
+If you want to run the application (all the services including frontend, backend, etc)
+Do:
+```bash
+docker compose up --build
+```
+
+If you want to stop the application, either use "Ctrl-C" or in a new terminal use "docker compose down"
+
+If you want to run it in detached mode:
+```bash
+docker compose up -d --build
+```
+
+If you want to stop it detached then do "docker compose down"
+
+If you want to attach a specific container to see the logs of it, do "docker attach <container name>"
+
+If you want to just get the logs, do "docker logs <container name>"
+
+
+Any questions regarding docker itself, refer to this website: https://docs.docker.com/

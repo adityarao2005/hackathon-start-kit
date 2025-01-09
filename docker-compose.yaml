@@ -47,3 +47,12 @@ services:
       - ./nodejs-backend-example:/app
     ports:
       - 4000:4000
+
+  api-gateway:
+    build:
+      context: ./nginx-api-gateway
+      dockerfile: ../dockerfiles/api-gateway.dev.dockerfile
+    volumes:
+      - ./api-gateway:/app
+    ports:
+      - 80:80
