@@ -1,5 +1,7 @@
 services:
   # edit this to be what you want
+
+  # nextjs frontend
   nextjs-frontend:
     build:
       context: ./nextjs-frontend-example
@@ -18,3 +20,33 @@ services:
       - ./nextjs-frontend-example/public:/app/public
     ports:
       - 3000:3000
+
+  # fastapi backend
+  fastapi-backend:
+    build:
+      context: ./fastapi-backend-example
+      dockerfile: ../dockerfiles/backend.dev.dockerfile
+    volumes:
+      - ./fastapi-backend-example/app:/app/app
+    ports:
+      - 8000:8000
+
+  # flask backend
+  flask-backend:
+    build:
+      context: ./flask-backend-example
+      dockerfile: ../dockerfiles/backend.dev.dockerfile
+    volumes:
+      - ./flask-backend-example/app:/app/app
+    ports:
+      - 5000:5000
+
+  # nodejs backend
+  nodejs-backend:
+    build:
+      context: ./nodejs-backend-example
+      dockerfile: ../dockerfiles/backend.dev.dockerfile
+    volumes:
+      - ./nodejs-backend-example/app:/app/app
+    ports:
+      - 4000:3000

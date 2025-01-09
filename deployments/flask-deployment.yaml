@@ -1,32 +1,32 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend
+  name: flask
 spec:
   selector:
-    app: frontend
+    app: flask
   type: LoadBalancer
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 3000
+      targetPort: 8000
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: flask
 spec:
-  # number of pods that kubernetes will create of this deployment
+  # number of pods that kubernetes will create of this deployment 
   replicas: 3
   selector:
     matchLabels:
-      app: frontend
+      app: flask
   template:
     metadata:
       labels:
-        app: frontend
+        app: flask
     spec:
       containers:
       # TODO: edit it to be the docker hub or other registry image name
-      - name: frontend
-        image: frontend:latest 
+      - name: flask
+        image: flask:latest 
