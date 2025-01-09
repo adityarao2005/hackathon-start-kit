@@ -20,5 +20,12 @@
         "ts-node": "^10.9.2",
         "concurrently": "^9.1.2",
         "typescript": "^5.5.3"
+    },
+    "nodemonConfig": {
+        "watch": [
+            "src"
+        ],
+        "ext": "ts",
+        "exec": "ts-node src/index.ts"
     }
 }

@@ -1,16 +1,15 @@
-// src/index.js
-import express, { Express, Request, Response } from "express";
+import express, { Application } from "express";
 
-const app: Express = express();
+const PORT = process.env.PORT || 4000;
 
-app.get("/", (req: Request, res: Response) => {
-    res.send("My Express + TypeScript Server");
+const app: Application = express();
+
+app.get("/ping", async (_req, res) => {
+    res.send({
+        message: "pong 2",
+    });
 });
 
-app.listen(80, '0.0.0.0', () => {
-    console.log("Server running on port 80");
+app.listen(PORT, () => {
+    console.log("Server is running on port", PORT);
 });
-
-setInterval(() => {
-    console.log("Hello World");
-}, 2000)

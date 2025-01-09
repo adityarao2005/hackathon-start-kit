@@ -46,4 +46,4 @@ services:
     volumes:
       - ./nodejs-backend-example:/app
     ports:
-      - 80:80
+      - 4000:4000
