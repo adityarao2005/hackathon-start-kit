@@ -6,10 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // src/index.js
 const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
-const port = process.env.PORT || 3000;
 app.get("/", (req, res) => {
     res.send("My Express + TypeScript Server");
 });
-app.listen(port, () => {
-    console.log(`[server]: Server is running at http://localhost:${port}`);
+app.listen(80, '0.0.0.0', () => {
+    console.log("Server running on port 80");
 });
+setInterval(() => {
+    console.log("Hello World");
+}, 2000);
